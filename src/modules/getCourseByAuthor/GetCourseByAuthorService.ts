@@ -16,11 +16,8 @@ export class GetCoursesByAuthorService {
         }
         
       });
-      console.log(author);
+   
      
-       if (courses.length === 0) {
-         throw new Error("Courses not found");
-     }
 
        const formattedCourses = courses.map((course) => {
          return {
