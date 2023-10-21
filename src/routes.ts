@@ -57,30 +57,30 @@ const savedCoursesController = new SavedCoursesController();
 //definição das rotas
 const routes = Router();
 //CREATE
-routes.post('/save',ensureAuthenticated, saveCourseController.handle)
+routes.post('/save', saveCourseController.handle)
 routes.post("/register", createUserController.handle);
 routes.post("/login", authenticateUserController.handle);
 routes.post("/refresh",  refreshTokenUserController.handle);
 routes.post('/send-code', sendCodeController.handle);
 routes.post('/reset', resetPasswordController.handle)
-routes.post("/courses", ensureAuthenticated, createCourseController.handle)
+routes.post("/courses",  createCourseController.handle)
 //routes.post("/upload", imageController.handle)
 //READ
-routes.get("/users/:uuid", ensureAuthenticated, getUserByIdlController.handle);
+routes.get("/users/:uuid",  getUserByIdlController.handle);
 routes.get('/saved/:uuid', savedCoursesController.handle)
 routes.get("/courses", getCoursesControler.handle);
 routes.get("/courses/admin", getCoursesAdminController.handle);
 routes.get("/users/:uuid/admin", getUsersController.handle);
-routes.get("/mycourses/:uuid", ensureAuthenticated, getCoursesByAuthorController.handle);
+routes.get("/mycourses/:uuid",  getCoursesByAuthorController.handle);
 routes.get("/courses/:uuid", getCoursesByIdControler.handle);
 //UPDATE
-routes.patch("/courses/:uuid/update", ensureAuthenticated, updateCourseControler.handle)
-routes.patch('/users/:uuid/update', ensureAuthenticated, updateUserController.handle);
+routes.patch("/courses/:uuid/update",  updateCourseControler.handle)
+routes.patch('/users/:uuid/update',  updateUserController.handle);
 routes.patch('/users/update', updateUsersController.handle);
 routes.patch('/courses/update', updateCoursesController.handle);
 //DELETE
-routes.delete("/courses/:uuid/delete", ensureAuthenticated, deleteCourseByIdController.handle)
-routes.delete("/users/:uuid/delete", ensureAuthenticated, deleteUserController.handle);
+routes.delete("/courses/:uuid/delete",  deleteCourseByIdController.handle)
+routes.delete("/users/:uuid/delete",  deleteUserController.handle);
 routes.delete('/courses/delete', deleteCoursesController.handle)
 routes.delete('/users/delete', deleteUsersController.handle)
 routes.delete('/save/delete', deleteSavedCourseController.handle)
