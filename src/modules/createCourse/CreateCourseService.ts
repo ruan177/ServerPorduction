@@ -10,7 +10,7 @@ export class CreateCourseService {
         })
 
         if (courseAlreadyExists) {
-            throw new Error("Course Already Exists")
+            throw new Error("Course Already Exists");
         }
 
         const course = await prisma.course.create({

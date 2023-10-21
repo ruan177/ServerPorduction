@@ -9,7 +9,7 @@ export class SaveCourseController {
 
         const saveCourseService = new SaveCourseService();
         try {
-            const response = saveCourseService.execute(userId, courseId)
+            const response = await saveCourseService.execute(userId, courseId)
 
             return res.json(response)
         } catch (error: any) {

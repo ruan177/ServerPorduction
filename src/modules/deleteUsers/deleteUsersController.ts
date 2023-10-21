@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { DeleteUsersService } from './DeleteUsersService'
+import { DeleteUsersService } from './deleteUsersService'
 import { z } from 'zod';
 
 
@@ -10,7 +10,7 @@ export class DeleteUsersController{
         const ids = idsSchema.parse(req.body); // Access the
         const deleteUsersService = new DeleteUsersService;
         try{
-            const response = deleteUsersService.execute(ids)
+            const response = await deleteUsersService.execute(ids)
 
             return res.json({ response })
         }catch(error: any){

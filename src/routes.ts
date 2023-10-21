@@ -53,7 +53,7 @@ const updateUsersController = new UpdateUsersController();
 const updateCoursesController = new UpdateCoursesController();
 const getCoursesAdminController = new GetCoursesAdminController();
 const savedCoursesController = new SavedCoursesController();
-//const imageController = new ImageController();
+const imageController = new ImageController();
 //definição das rotas
 const routes = Router();
 //CREATE
@@ -64,7 +64,7 @@ routes.post("/refresh",  refreshTokenUserController.handle);
 routes.post('/send-code', sendCodeController.handle);
 routes.post('/reset', resetPasswordController.handle)
 routes.post("/courses",  createCourseController.handle)
-//routes.post("/upload", imageController.handle)
+routes.post("/upload", imageController.handle)
 //READ
 routes.get("/users/:uuid",  getUserByIdlController.handle);
 routes.get('/saved/:uuid', savedCoursesController.handle)

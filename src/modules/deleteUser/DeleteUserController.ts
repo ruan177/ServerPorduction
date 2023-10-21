@@ -11,7 +11,7 @@ export class DeleteUserController{
         const deleteUserService = new DeleteUserService();
 
         try{
-            const response = deleteUserService.execute(user_id)
+            const response = await deleteUserService.execute(user_id)
 
             return res.json(response)
         }catch(error: any){

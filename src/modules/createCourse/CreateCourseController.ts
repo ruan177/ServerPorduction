@@ -8,7 +8,7 @@ export class CreateCourseController {
       const createCourseService = new CreateCourseService();
 
       try {
-         const response = createCourseService.execute(
+         const response = await createCourseService.execute(
             name,
             description,
             author_id,

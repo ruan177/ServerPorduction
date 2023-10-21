@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import { UpdateCourseService } from './UpdateCourseService';
-import { CourseUpdateSchema } from "./UpdateCourseSchema";
+import { UpdateCourseService } from './updateCourseService';
+import { CourseUpdateSchema } from "./updateCourseSchema";
 export class UpdateCourseControler {
     async handle(req: Request, res: Response) {
        const { name, description, author_id, body } = CourseUpdateSchema.parse(req.body);

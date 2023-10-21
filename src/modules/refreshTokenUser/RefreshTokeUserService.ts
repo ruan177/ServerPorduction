@@ -21,6 +21,7 @@ export class RefreshTokenUserService {
 
         const generateTokenProvider = new GenerateTokenProvider();
         const token = await generateTokenProvider.execute(refreshToken.user_id);
+        
 
 
         return token

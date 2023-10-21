@@ -1,5 +1,5 @@
 import {Response, Request} from "express"
-import { DeleteCourseByIdService } from "./DeleteCourseByIdService";
+import { DeleteCourseByIdService } from "./deleteCourseByIdService";
 import { z } from "zod";
 
 export class DeleteCourseByIdController{
@@ -10,7 +10,7 @@ export class DeleteCourseByIdController{
         const deleteCouseByIdService = new DeleteCourseByIdService;
 
         try{
-            const response = deleteCouseByIdService.execute(course_id)
+            const response = await deleteCouseByIdService.execute(course_id)
 
             return res.json({ response })
         }catch(error: any){

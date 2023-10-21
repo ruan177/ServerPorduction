@@ -9,13 +9,13 @@ export { GetCoursesByIdController } from "./getCourseById/GetCourseByIdControlle
 export { GetCoursesByAuthorController } from "./getCourseByAuthor/GetCourseByAuthorController"
 export { GetUserByIdController } from "./getUserById/GetUserByIdController";
 export { CreateCourseController } from "./createCourse/CreateCourseController";
-export { DeleteCourseByIdController } from "./deleteCourse/DeleteCourseByIdController";
+export { DeleteCourseByIdController } from "./deleteCourse/deleteCourseByIdController";
 export { UpdateUserController } from "./updateUser/UpdateUserController";
-export { UpdateCourseControler } from "./updateCourse/UpdateCourseController";
-export { SendCodeController } from "./sendCodeForRecAccount/SendCodeController";
-export { ResetPasswordController } from "./resetPassword/ResetPasswordController";
-export { DeleteCoursesController } from "./deleteCourses/DeleteCoursesController";
-export { DeleteUsersController} from "./deleteUsers/DeleteUsersController";
+export { UpdateCourseControler } from "./updateCourse/updateCourseController";
+export { SendCodeController } from "./sendCodeForRecAccount/sendCodeController";
+export { ResetPasswordController } from "./resetPassword/resetPasswordController";
+export { DeleteCoursesController } from "./deleteCourses/deleteCoursesController";
+export { DeleteUsersController} from "./deleteUsers/deleteUsersController";
 export { GetCoursesAdminController } from "./getCoursesAdmin/GetCoursesAdminController";
 export {SaveCourseController}  from "./SaveCourse/saveCourseController";
 export {DeleteSavedCourseController} from "./deleteSavedCourse/deleteSavedCourseController";

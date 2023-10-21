@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { DeleteCoursesService } from './DeleteCoursesService'
+import { DeleteCoursesService } from './deleteCoursesService'
 import { z } from 'zod';
 
 export class DeleteCoursesController{
@@ -9,7 +9,7 @@ export class DeleteCoursesController{
         const ids = idsSchema.parse(req.body); // Access the 'ids' property from the request body
         const deleteCoursesService = new DeleteCoursesService;
         try{
-            const response = deleteCoursesService.execute(ids)
+            const response = await deleteCoursesService.execute(ids)
 
            return res.json({ response })
         }catch(error: any){

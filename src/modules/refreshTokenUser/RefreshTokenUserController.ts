@@ -12,9 +12,9 @@ export class RefreshTokenUserController{
         const refreshTokenUserService = new RefreshTokenUserService()
 
         try{
-            const access = await refreshTokenUserService.execute(refresh)
+            const response = await refreshTokenUserService.execute(refresh)
 
-            return res.json({access}) 
+            return res.json({response}) 
         }catch(error: any){
             return res.status(401).json(error.message)
         }

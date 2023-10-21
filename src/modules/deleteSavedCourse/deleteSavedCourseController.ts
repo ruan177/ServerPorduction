@@ -9,7 +9,7 @@ export class DeleteSavedCourseController{
  
         const deleteSavedCourseService = new DeleteSavedCourseService();
         try{
-            const response = deleteSavedCourseService.execute(userId, courseId)
+            const response = await deleteSavedCourseService.execute(userId, courseId)
 
             return res.json({response})
 
