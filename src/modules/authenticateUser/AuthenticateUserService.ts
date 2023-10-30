@@ -6,7 +6,7 @@ import { GenerateTokenProvider } from '../../provider/GenerateTokenProvider'
 
 
 export class AuthenticateUserService {
-    async execute( email: string, password: string ) {
+    async execute(email: string, password: string) {
         const userAlreadyExists = await prisma.user.findFirst({
             where: {
                 email
@@ -42,22 +42,26 @@ export class AuthenticateUserService {
 
         const refreshToken = await generateRefreshToken.execute(userAlreadyExists.id);
 
-        function userProps(usuario: { username: any; id: any; email: any; isAdmin: any }) {
+        function userProps(usuario: {
+            profileImageUrl: string; username: string; id: string; email: string; isAdmin: boolean
+        }) {
             const propriedadesDesejadas = {
-              id: usuario.id,
-              username: usuario.username,
-              email: usuario.email,
-              isAdmin: usuario.isAdmin,
+                id: usuario.id,
+                username: usuario.username,
+                email: usuario.email,
+                isAdmin: usuario.isAdmin,
+                profileImageUrl: usuario.profileImageUrl,
             };
-          
+
             return propriedadesDesejadas;
         }
         const user = userProps(userAlreadyExists);
 
-        return { 
+        return {
             user,
             accessToken,
-            refreshToken };
+            refreshToken
+        };
 
     }
 

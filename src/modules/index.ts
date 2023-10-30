@@ -21,3 +21,5 @@ export {SaveCourseController}  from "./SaveCourse/saveCourseController";
 export {DeleteSavedCourseController} from "./deleteSavedCourse/deleteSavedCourseController";
 export {SavedCoursesController}  from "./SavedCourses/savedCourseController";
 export {ImageController} from "./uploadImage/ImageController"
+export {GetImageController} from './getImage/getImageController'
+export {UpdateProfileImageController} from './updateProfileImage/updateProfileImageController'

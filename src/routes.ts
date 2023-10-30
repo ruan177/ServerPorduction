@@ -22,11 +22,15 @@ import {
     SaveCourseController,
     DeleteSavedCourseController,
     SavedCoursesController,
-    ImageController
+    ImageController, 
+    GetImageController,
+    UpdateProfileImageController
 } from './modules'
 
 import { UpdateUsersController } from "./modules/updateUsers/UpdateUsersController";
 import { UpdateCoursesController } from "./modules/updateCourses/UpdateCoursesController";
+import multer from "multer";
+import { storage } from "./middlewares/multer";
 
 
 // Instâncias dos controladores
@@ -54,8 +58,11 @@ const updateCoursesController = new UpdateCoursesController();
 const getCoursesAdminController = new GetCoursesAdminController();
 const savedCoursesController = new SavedCoursesController();
 const imageController = new ImageController();
+const getImageController = new GetImageController()
+const updateProfileImageController = new UpdateProfileImageController();
 //definição das rotas
 const routes = Router();
+const upload = multer({ storage });
 //CREATE
 routes.post('/save', saveCourseController.handle)
 routes.post("/register", createUserController.handle);
@@ -64,7 +71,8 @@ routes.post("/refresh",  refreshTokenUserController.handle);
 routes.post('/send-code', sendCodeController.handle);
 routes.post('/reset', resetPasswordController.handle)
 routes.post("/courses",  createCourseController.handle)
-routes.post("/upload", imageController.handle)
+routes.post("/upload", upload.single('file'), imageController.handle)
+routes.post("/profile/:uuid",upload.single('file'),updateProfileImageController.handle )
 //READ
 routes.get("/users/:uuid",  getUserByIdlController.handle);
 routes.get('/saved/:uuid', savedCoursesController.handle)
@@ -73,6 +81,8 @@ routes.get("/courses/admin", getCoursesAdminController.handle);
 routes.get("/users/:uuid/admin", getUsersController.handle);
 routes.get("/mycourses/:uuid",  getCoursesByAuthorController.handle);
 routes.get("/courses/:uuid", getCoursesByIdControler.handle);
+routes.get('/images/:filename', getImageController.handle)
+
 //UPDATE
 routes.patch("/courses/:uuid/update",  updateCourseControler.handle)
 routes.patch('/users/:uuid/update',  updateUserController.handle);

@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'
 import { AuthenticateUserService } from './AuthenticateUserService'
-import { AuthenticateSchema } from './AuthenticateUserSchema'
+import { AuthenticateUserSchema } from './AuthenticateUserSchema'
 
 
 export class AuthenticateUserController {
     async handle(req: Request, res: Response) {
-        const { email, password } = AuthenticateSchema.parse(req.body);
+        const { email, password } = AuthenticateUserSchema.parse(req.body);
 
         const authenticateUserService = new AuthenticateUserService();
 
