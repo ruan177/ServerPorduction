@@ -7,7 +7,7 @@ export class GenerateTokenProvider{
         const token = sign({
         
             }, 'JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNT', {
-             expiresIn: '15m',
+             expiresIn: '6m',
              subject: String(user_id)
         });
 

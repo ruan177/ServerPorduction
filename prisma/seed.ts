@@ -343,13 +343,13 @@ async function main() {
       //       # Cloud Computing Essentials
     
       //       Cloud computing has revolutionized the way we deploy, manage, and scale applications and
-      //       services. In this course, you'll explore the core concepts of cloud computing and understand
-      //       how to leverage cloud services effectively.
+      //       UseCases. In this course, you'll explore the core concepts of cloud computing and understand
+      //       how to leverage cloud UseCases effectively.
     
       //       Course content:
     
       //       - **Cloud Deployment Models:** public, private, and hybrid clouds.
-      //       - **Cloud Service Models:** IaaS, PaaS, and SaaS.
+      //       - **Cloud UseCase Models:** IaaS, PaaS, and SaaS.
       //       - **Cloud Providers:** exploring popular cloud providers and their offerings.
       //       - **Benefits and Challenges:** understanding the advantages and considerations of cloud computing.
             
@@ -378,7 +378,7 @@ async function main() {
       //       Course topics:
     
       //       - **Footprinting and Reconnaissance:** gathering information about target systems.
-      //       - **Scanning and Enumeration:** identifying open ports and services.
+      //       - **Scanning and Enumeration:** identifying open ports and UseCases.
       //       - **Vulnerability Assessment:** discovering potential security weaknesses.
       //       - **Penetration Testing:** simulating attacks to assess system defenses.
             
