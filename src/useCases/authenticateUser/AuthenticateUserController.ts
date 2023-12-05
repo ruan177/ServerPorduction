@@ -14,6 +14,7 @@ export class AuthenticateUserController {
                 email,
                 password
             );
+            
 
             return res.json({ ...token })
         } catch (error: any) {

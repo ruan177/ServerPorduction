@@ -18,7 +18,8 @@ async function main() {
         created_courses: true,
       }
     }),
-    // prism
+
+ 
     ]),
     await Promise.all([
       await prisma.course.create({

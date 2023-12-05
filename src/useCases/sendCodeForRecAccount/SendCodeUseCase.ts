@@ -37,7 +37,7 @@ export class SendCodeUseCase {
      
       // Configuração do serviço de email (exemplo usando Gmail)
       const transporter = nodemailer.createTransport({
-        UseCase: "hotmail",
+        service: "hotmail",
         auth: {
           user: process.env.MAIL_USERNAME,
           pass: process.env.MAIL_PASSWORD, // Substitua pela sua senha do email

@@ -13,7 +13,8 @@ export class RefreshTokenUserController{
 
         try{
             const response = await refreshTokenUserUseCase.execute(refresh)
-
+          
+              
             return res.json({...response}) 
         }catch(error: any){
             return res.status(401).json(error.message)
