@@ -85,15 +85,15 @@ routes.get("/courses/:uuid", getCoursesByIdControler.handle);
 routes.get('/images/:filename', getImageController.handle)
 
 //UPDATE
-routes.patch("/courses/:uuid/update",  updateCourseControler.handle)
-routes.patch('/users/:uuid/update',  updateUserController.handle);
-routes.patch('/users/update', updateUsersController.handle);
-routes.patch('/courses/update', updateCoursesController.handle);
+routes.patch("/courses/:uuid/update", ensureAuthenticated,  updateCourseControler.handle)
+routes.patch('/users/:uuid/update',ensureAuthenticated,  updateUserController.handle);
+routes.patch('/users/update',ensureAuthenticated,  updateUsersController.handle);
+routes.patch('/courses/update',ensureAuthenticated,  updateCoursesController.handle);
 //DELETE
-routes.delete("/courses/:uuid/delete",  deleteCourseByIdController.handle)
-routes.delete("/users/:uuid/delete",  deleteUserController.handle);
-routes.delete('/courses/delete', deleteCoursesController.handle)
-routes.delete('/users/delete', deleteUsersController.handle)
-routes.delete('/save/delete', deleteSavedCourseController.handle)
+routes.delete("/courses/:uuid/delete",ensureAuthenticated,   deleteCourseByIdController.handle)
+routes.delete("/users/:uuid/delete",ensureAuthenticated,   deleteUserController.handle);
+routes.delete('/courses/delete',ensureAuthenticated,  deleteCoursesController.handle)
+routes.delete('/users/delete',ensureAuthenticated,  deleteUsersController.handle)
+routes.delete('/save/delete',ensureAuthenticated,  deleteSavedCourseController.handle)
 
 export { routes }
