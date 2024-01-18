@@ -2,6 +2,7 @@ import { prisma } from '../../lib/prisma'
 import { compare } from 'bcrypt'
 import { GenerateRefreshToken } from '../../provider/GenerateRefreshToken'
 import { GenerateTokenProvider } from '../../provider/GenerateTokenProvider'
+import { encryptObjectToken, encryptToken } from '../../lib/encrypt'
 
 
 
@@ -32,19 +33,27 @@ export class AuthenticateUserUseCase {
         const accessToken = await generateTokenProvider.execute(userAlreadyExists.id);
 
         if (userAlreadyExists.token) {
-            await prisma.refreshToken.delete({
+            const refreshTokenExists = await prisma.refreshToken.findFirst({
+              where: {
+                user_id: userAlreadyExists.id
+              }
+            });
+          
+            if (refreshTokenExists) {
+              await prisma.refreshToken.delete({
                 where: {
-                    user_id: userAlreadyExists.id
+                  user_id: userAlreadyExists.id
                 }
-            })
-        }
+              });
+            }
+          }
 
 
         const refreshToken = await generateRefreshToken.execute(userAlreadyExists.id);
 
-        function userProps(usuario: {
-            profileImageUrl: string; username: string; id: string; email: string; isAdmin: boolean
-        }) {
+        
+
+        function userProps(usuario: { profileImageUrl: string; username: string; id: string; email: string; isAdmin: boolean }) {
             const propriedadesDesejadas = {
                 id: usuario.id,
                 username: usuario.username,
