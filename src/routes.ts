@@ -80,7 +80,7 @@ routes.get('/saved/:uuid',ensureAuthenticated, savedCoursesController.handle)
 routes.get("/courses", getCoursesControler.handle);
 routes.get("/courses/admin",ensureAuthenticated, getCoursesAdminController.handle);
 routes.get("/users/:uuid/admin", getUsersController.handle);
-routes.get("/mycourses/:uuid", ensureAuthenticated, getCoursesByAuthorController.handle);
+routes.get("/mycourses/:uuid",  getCoursesByAuthorController.handle);
 routes.get("/courses/:uuid", getCoursesByIdControler.handle);
 routes.get('/images/:filename', getImageController.handle)
 
