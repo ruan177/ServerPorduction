@@ -19,10 +19,7 @@ export class GetCoursesByAuthorUseCase {
           author_id: {
             equals: author
           },
-          isAproved: {
-            equals: true
-          }
-        },
+                  },
         include: {
           author: true
         }
