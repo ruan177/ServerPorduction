@@ -7,8 +7,7 @@ import { config } from 'dotenv';
 import path from 'path'
 config();
 
-
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
