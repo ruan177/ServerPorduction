@@ -11,7 +11,7 @@ export class GetUserByIdController{
         try{
             const user = await getUserByIdUseCase.execute(user_id)
 
-            return res.json(user)
+            return res.status(200).json({user})
 
         }catch(error: any){
             return res.status(500).json({error: error.message})

@@ -12,7 +12,7 @@ export class UpdateUserController {
   
     try {
       const updatedUser = await updateUserUseCase.execute(uuid, username, newusername, password, newpassword);
-      return res.json({ user: updatedUser });
+      return res.status(200).json({ user: updatedUser });
     } catch (error: any) {
       return res.status(422).json({ error: error.message });
     }

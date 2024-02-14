@@ -11,7 +11,7 @@ export class UpdateProfileImageController {
             const updateProfileImageUseCase = new UpdateProfileImageUseCase();
             const response = await updateProfileImageUseCase.execute(file.filename, userId);
 
-            res.status(201).json({ response });
+            res.status(200).json({ response });
         } catch (error) {
             console.error(error);
             res.status(500).json({ error: 'Falha ao fazer upload da imagem' });

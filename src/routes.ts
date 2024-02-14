@@ -73,7 +73,7 @@ routes.post('/send-code', sendCodeController.handle);
 routes.post('/reset', resetPasswordController.handle)
 routes.post("/courses",ensureAuthenticated,  createCourseController.handle)
 routes.post("/upload", upload.single('file'), imageController.handle)
-routes.post("/profile/:uuid",upload.single('file'),updateProfileImageController.handle )
+
 //READ
 routes.get("/users/:uuid",ensureAuthenticated,  getUserByIdlController.handle);
 routes.get('/saved/:uuid',ensureAuthenticated, savedCoursesController.handle)
@@ -89,6 +89,7 @@ routes.patch("/courses/:uuid/update", ensureAuthenticated,  updateCourseControle
 routes.patch('/users/:uuid/update',ensureAuthenticated,  updateUserController.handle);
 routes.patch('/users/update',ensureAuthenticated,  updateUsersController.handle);
 routes.patch('/courses/update',ensureAuthenticated,  updateCoursesController.handle);
+routes.patch("/profile/:uuid",upload.single('file'),updateProfileImageController.handle )
 //DELETE
 routes.delete("/courses/:uuid/delete",ensureAuthenticated,   deleteCourseByIdController.handle)
 routes.delete("/users/:uuid/delete",ensureAuthenticated,   deleteUserController.handle);

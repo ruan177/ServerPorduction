@@ -8,7 +8,7 @@ export class ImageController {
       const imageUseCase = new ImageUseCase();
       const imageUrl = await imageUseCase.execute(file.filename);
 
-      res.status(201).json({ imageUrl });
+      res.status(200).json({ imageUrl });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Falha ao fazer upload da imagem' });
