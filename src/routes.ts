@@ -73,7 +73,7 @@ routes.post('/send-code', sendCodeController.handle);
 routes.post('/reset', resetPasswordController.handle)
 routes.post("/courses",ensureAuthenticated,  createCourseController.handle)
 routes.post("/upload", upload.single('file'), imageController.handle)
-
+routes.patch("/profile/:uuid",upload.single('file'),updateProfileImageController.handle )
 //READ
 routes.get("/users/:uuid",ensureAuthenticated,  getUserByIdlController.handle);
 routes.get('/saved/:uuid',ensureAuthenticated, savedCoursesController.handle)
