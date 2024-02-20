@@ -10,7 +10,8 @@
     "dev": "tsx watch src/app.ts",
     "build": "tsup src",
     "start": "node dist/app.js",
-    "test": "jest"
+    "test": "jest",
+    "vercel-buld": "npx prisma migrate deploy"
   },
   "author": "",
   "license": "ISC",
