@@ -8,9 +8,11 @@ export class UpdateProfileImageController {
             const typeUserId = z.string();
             const userId = typeUserId.parse(req.params.uuid)
             const { file } = req;
+            if (!file) {
+                throw new Error('File is missing');
+            }
             const updateProfileImageUseCase = new UpdateProfileImageUseCase();
             const response = await updateProfileImageUseCase.execute(file.filename, userId);
-
             res.status(200).json({ response });
         } catch (error) {
             console.error(error);

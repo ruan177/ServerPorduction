@@ -2,7 +2,6 @@ import { prisma } from '../../lib/prisma'
 import { compare } from 'bcrypt'
 import { GenerateRefreshToken } from '../../provider/GenerateRefreshToken'
 import { GenerateTokenProvider } from '../../provider/GenerateTokenProvider'
-import { encryptObjectToken, encryptToken } from '../../lib/encrypt'
 
 
 
