@@ -9,7 +9,10 @@ export class SavedCoursesUseCase {
                        user_id: userId
                     }
                 }
-           }
+           },
+           include:{
+            savedUsers:true
+        },
             
         })
         return {
