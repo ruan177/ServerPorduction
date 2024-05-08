@@ -6,12 +6,12 @@ export class CreateUserUseCase{
     async execute(username: string, email: string, password: string) {
         const userAlreadyExists = await prisma.user.findFirst({
             where: {
-                username,
+                email,
             },
         });
 
         if(userAlreadyExists){
-            throw new Error("User already exists!");
+            throw new Error("Email ja cadastrado ou inválido!");
         }
         const hashedPassword = await hash(password, 8);
 
